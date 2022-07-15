@@ -1,0 +1,30 @@
+A literal value in C# is a hard-coded value that never changes.
+
+In the previous lesson 'hell-world', we displayed a literal string to the Output pane. We literally wanted that string of alphanumeric characters H, e, l, l, o to be displayed in the output window.
+
+## - CHAR LITERAL
+
+In C#, we also have 'char literals' which is simply surrounding one alphanumeric character in single quotes. E.g. 'b';
+
+## - INT LINTERAL
+
+In C#, int literals (a whole number) requires no additional operators like string or char, instead we can just type the numbers.
+E.g. Console.WriteLine(123);
+
+## - DECIMAL LITERAL
+
+If we want to print a number that includes values after a decimal point, we use a decimal literal.
+To create a decimal literal, we append the letter 'm' after the number. The 'm' is called a literal suffix, which tells the compiler that we're working with a type of demical.
+E.g. Console.WriteLine(12.30m); outputs: 12.30.
+
+## - BOOLEAN LITERALS
+
+Typical boolean literals, we use true and false to add decision logicto our code and applications.
+
+## - WHY EMPHASISE DATA TYPES?
+
+Data types play a central role in C#. In fact, the emphasis on data types is one of the key distinguishing features of C# compared to other languages like Python and JavaScript. The designers of C# believed they can help developers avoid common software bugs by enforcing data types. You'll see this concept unfold as you learn more about C#.`
+
+## - PRESENTATION VS. CALCULATION & EVALUATION
+
+Strings and chars are used for presentation, not calculation. If a mathemetical equation needs to be performed, we would prefer to use decimals and int. However, if the data includes numbers that need only be presented, such as a phone number, you should use a string/char type.

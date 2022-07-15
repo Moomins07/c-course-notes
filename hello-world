@@ -1,0 +1,5 @@
+Outputting to the log is slightly different from JavaScript.
+
+Console.Writeline(""); is used to output to different lines, as implied.
+
+Whereas Console.Write(""); is used to keep the outputs on the same line.

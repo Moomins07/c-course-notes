@@ -1,0 +1,30 @@
+## Declaring a variable
+
+To create a new variable in C#, we must first declare the data type of the variable and then give it a name.
+
+E.g. string firstName;
+
+This variable can now only hold string values.
+
+Variable names shouldn't include the data type of the variable. You might see some advice to use a style like string strValue;. That advice is no longer current.
+
+## IMPLICITLY TYPED LOCAL VARIABLES
+
+We can also create implicitly typed local variables in C# which instructs the compiler to infer the data type depending on what we store in that variable.
+
+We do this by using the 'var' syntax.
+E.g. var message = "Hello world!";
+
+We stored a string in our 'message' variable declared using 'var' and so therefore this variable is now a string-type.
+
+However, once the variable type is set, we cannot then try to change that variable to another data type.
+
+E.g. var message = "Hello World!";
+message = 10.0m;
+
+Will not work as C# cannot convert type decimal to string.
+
+Var can also only be used if the variable is initialised (assigned a value as soon as it is declared).
+
+var message; will not work.
+var message = "String"; will work.
