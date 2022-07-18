@@ -1,0 +1,79 @@
+## String concatenation
+
+String concatenation is very similar to JavaScript's.
+When mixing data types, C# does the same as JavaScript and forces implicit type conversion.
+
+E.g.
+string firstName = "Bob";
+int widgetsSold = 7;
+Console.WriteLine(firstName + " sold " + widgetsSold + 7 + " widgets.");
+
+Because widgetsSold is surrounded by string values, it is converted to a string. This means that widgetsSold + 7 will output 77, NOT 14.
+
+However, like JavaScript, we can add brackets to make our intention more clear to the compiler.
+
+Console.WriteLine(firstName + " sold " + (widgetsSold + 7) + " widgets.");
+
+Now the output will be 14, and not 77.
+
+> You should probably avoid performing both a calculation and concatenation in a single line of code. The point here is to help you understand how to view operators and operands the way the compiler does.
+
+### Basic math operations
+
+All of the basic math operators work the same as JavaScript with the exception of division '/'. The values after the decimal are truncated (rounded down to whole integer). This occurs when we define a variable as int and use division.
+
+int quotient = 7 / 5;
+Outputs: 1
+
+To see division working properly, we need to use a data type that supports fractional digits after the decimal point like decimal.
+
+decimal decimalQuotient = 7.0m / 5;
+Outputs: 1.4
+
+> In order for this to work, the quotient (left of the assignment operator) must be of type decimal and either the dividend or divisor must be of type decimal (or both).
+
+E.g.
+decimal decimalQuotient = 7 / 5.0m;
+decimal decimalQuotient = 7.0m / 5.0m;
+
+Both will work perfectly fine.
+
+### Division using literal decimal data
+
+If we are required to divide to variables of type 'int' but do not want the result truncated, we must perform a 'data type cast' from int to decimal which allows us to temporarily 'data convert'. The compiler will treat a value as if it were a different data type.
+
+E.g.
+int first = 7;
+int second = 5;
+decimal quotient = (decimal)first / (decimal)second;
+
+### Remainder operator
+
+The remainder operator '%' tells us the remainder of int division. Essentially we are able to work out if one number divisible by another.
+
+> This can be useful during long processing operations when looping through hundreds or thousands of data records and you want to provide feedback to the end user after every 100 data records have been processed.
+
+## Order of operations
+
+In math, PEMDAS is an acronym that helps students remember the order in which multiple operations are performed. The order is:
+
+> Parentheses (whatever is inside the parenthesis is performed first)
+> Exponents
+> Multiplication and Division (from left to right)
+> Addition and Subtraction (from left to right)
+
+C# follows the same order as PEMDAS except for exponents. While there's no exponent operator in C#, you can use the System.Math.Pow() method, which is available from the .NET Class Library. The module "Call methods from the .NET Class Library using C#" will feature this method and others.
+
+## Increment and decrement
+
+The += operator adds and addigns the value on the right of the operator to the value on the left. This is the same as JavaScript.
+
+E.g.
+value = value + 5;
+value += 5;
+
+Incrementing and decrementing by 1 is the same as JavaScript. We use ++ and --.
+
+## Positioning of increment and decrement operators
+
+> Both the increment and decrement operators have an interesting quality -- depending on their position, they perform their operation before or after they retrieve their value. In other words, if you use the operator before the value as in ++value, then the increment will happen before the value is retrieved. Likewise, value++ will increment the value after the value has been retrieved.

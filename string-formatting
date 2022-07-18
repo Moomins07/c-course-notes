@@ -1,0 +1,63 @@
+## Character escape sequences
+
+An escape character sequence is telling the runtime that we're going to insert a special character that will affect the output of the string. In C# the sequence begins with a backslash and then include another character.
+
+E.g. \n will add a new line, \t will add a tab of space.
+
+We can also use backslashes to insert quotation marks into the literal string without ending the string prematurely.
+
+E.g Console.WriteLine("Hello \"World\"!");
+
+What if you need to use the backslash for other purposes, like to display a file path?
+
+We can use double backslash to display a single backslash.
+
+E.g. Console.WriteLine("c:\\source\\repos");
+Outputs: c:\source\repos
+
+## Verbatim string literal
+
+A verbatim string literal will keep all whitespace and characters without the need to escape the backslash. Use @ before the literal string to create a verbatim string literal. Two consecutive double-quotes as printed as single double quote in the output.
+
+E.g. Console.WriteLine(@" c:\source\repos  
+ (""this is where your code goes"")");
+
+returns: c:\source\repos
+("this is where your code goes")
+
+## Unicode escape characters
+
+We can also add encoded charavters in literal strings using the \u escape sequence.
+
+E.g.
+// Kon'nichiwa World
+Console.WriteLine("\u3053\u3093\u306B\u3061\u306F World!");
+
+## Summary
+
+> Use character escape sequences when you need to insert a special character into a literal string, like a tab \t, new line \n, or a double quotation mark \".
+> Use an escape character for the backslash \\ when you need to use a backslash in all other scenarios.
+> Use the @ directive to create a verbatim string literal that keeps all whitespace formatting and backslash characters in a string.
+> Use the \u plus a four-character code to represent Unicode characters (UTF-16) in a string.
+> Unicode characters may not print out correctly depending on the application.
+
+## String concatenation
+
+Essentially the same as JavaScript:
+
+string firstName = "Bob";
+string message = "Hello " + firstName;
+
+## String interpolation
+
+String interpolation is the same as a JavaScript template literal, except the syntax differs very slightly.
+
+string message = $"{greeting} {firstName}!";
+
+> $ goes at the beginning following by double quotes, curly braces used to insert whatever we need. Also accepts expressions, same as JavaScript.
+
+> We can also use verbatim literals and string interpolation together.
+> E.g. string projectName = "First-Project";
+> Console.WriteLine($@"C:\Output\{projectName}\Data");
+
+We place the $ at the very beginning still, infront of the @ symbol.
